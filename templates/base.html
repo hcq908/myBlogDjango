@@ -9,24 +9,45 @@
     </title>
 
     <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="{% static "bootstrap-3.3.7-dist/css/bootstrap.min.css" %}" >
-        <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap-theme.min.css' %}">
-        <script src="{% static "bootstrap-3.3.7-dist/js/bootstrap.min.js" %}"> </script>
-        <script src="{% static "bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js" %}"> </script>
-        <script src="{% static "bootstrap-3.3.7-dist/js/popper.min.js" %}"> </script>
+    <link rel="stylesheet" href="{% static "bootstrap-3.3.7-dist/css/bootstrap.min.css" %}" >
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap-theme.min.css' %}">
+    <script src="{% static "bootstrap-3.3.7-dist/js/bootstrap.min.js" %}"> </script>
+    <script src="{% static "bootstrap-3.3.7-dist/js/jquery-3.3.1.min.js" %}"> </script>
+    <script src="{% static "bootstrap-3.3.7-dist/js/popper.min.js" %}"> </script>
 </head>
 <body>
     <div class="container-fluid">
         {% include 'header.html' %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                {% block headmessage %} {% endblock %}
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>
+                            目录
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href="/" class="list-group-item">回首页</a>
+                            <a href="https://www.ifeng.com" class="list-group-item">凤凰网</a>
+                            <a href="http://www.weather.com.cn/" class="list-group-item">中国天气预报</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-                {% block content %} {% endblock %}
-            </div>
-            <div class="panel-footer">
-                {% include 'footer.html' %}
+
+            <div class="col-sm-8 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class="panel-body">
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="panel-footer">
+                        {% include 'footer.html' %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
